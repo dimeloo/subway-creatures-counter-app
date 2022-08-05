@@ -41,12 +41,31 @@
 // change the count-el in the HTML to reflect the new count
 
 let countEl = document.getElementById('count-el')
-
-console.log(countEl)
+let welcomeEl = document.getElementById('welcome-el')
+let saveEl = document.getElementById('save-el')
 
 let count = 0
+let name = 'Mike'
+let greeting = 'Welcome to the show, '
 
 function increment() {
   count += 1
   countEl.innerText = count
 }
+
+// Create a function, save() which logs out the count when its called
+
+function save() {
+  let recordProgress = (count + ' - ')
+  saveEl.innerText += recordProgress
+  console.log(count)
+}
+
+function renderMessage() {
+  let message = (greeting + name)
+  welcomeEl.innerText = message
+}
+
+increment()
+save()
+renderMessage()
